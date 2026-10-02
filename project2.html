@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinthala Spandana | AI & ML Engineer</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="project1.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            signature: ['Caveat', 'cursive'],
+          },
+          colors: {
+            brand: {
+              primary: '#0284c7',      /* Sky Blue Accent */
+              glow: '#38bdf8',         /* Electric Light Blue */
+              dark: '#0f172a',         /* Slate Navy Dark */
+              softBlue: '#e0f2fe',     /* Pastel Ice Blue */
+              softBg: '#f8fafc',       /* Ultra Light Blue Canvas */
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="selection:bg-brand-primary selection:text-white">
+
+  <!-- ================= TOP HEADER NAVIGATION ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#f8fafc]/90 backdrop-blur-md border-b border-sky-950/[0.05] transition-all">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <span class="w-6 h-[2.5px] bg-brand-primary transition-all duration-300 group-hover:w-9"></span>
+        <span class="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#0f172a]">
+          CHINTHALA SPANDANA
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono font-semibold tracking-[0.2em] uppercase text-slate-600">
+        <a href="#about" class="hover:text-brand-primary transition-colors">ABOUT</a>
+        <a href="#education" class="hover:text-brand-primary transition-colors">EDUCATION</a>
+        <a href="#skills" class="hover:text-brand-primary transition-colors">SKILLS</a>
+        <a href="#projects" class="hover:text-brand-primary transition-colors">PROJECT</a>
+        <a href="#contact" class="hover:text-brand-primary transition-colors">CONTACT</a>
+      </nav>
+
+      <!-- Quick Connect CTA Buttons (GitHub & LinkedIn) -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <a href="https://github.com/spandanachintala213-maker" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-full border border-sky-200 bg-white text-slate-700 hover:text-brand-primary hover:border-brand-primary transition-all flex items-center justify-center shadow-sm" title="GitHub Profile">
+          <i class="fa-brands fa-github text-sm"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/spandana-chintala-354430440" target="_blank" rel="noreferrer" class="px-5 py-2 rounded-full text-xs font-mono font-semibold border border-sky-400/40 hover:border-brand-primary bg-white text-brand-primary transition-all hover:bg-brand-primary hover:text-white shadow-sm flex items-center gap-2">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LET'S TALK</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-[#0f172a] text-xl p-2 focus:outline-none" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 py-4 bg-white border-b border-sky-100 flex flex-col gap-4 text-xs font-mono tracking-widest uppercase text-slate-700">
+      <a href="#about" onclick="toggleMobileMenu()" class="hover:text-brand-primary">ABOUT</a>
+      <a href="#education" onclick="toggleMobileMenu()" class="hover:text-brand-primary">EDUCATION</a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-brand-primary">SKILLS</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-brand-primary">PROJECT</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-brand-primary">CONTACT</a>
+      <div class="pt-2 border-t border-sky-100 flex flex-col gap-2">
+        <a href="https://github.com/spandanachintala213-maker" target="_blank" class="text-slate-800 font-bold flex items-center gap-2">
+          <i class="fa-brands fa-github"></i> GITHUB PROFILE &nearr;
+        </a>
+        <a href="https://www.linkedin.com/in/spandana-chintala-354430440" target="_blank" class="text-brand-primary font-bold flex items-center gap-2">
+          <i class="fa-brands fa-linkedin"></i> LINKEDIN PROFILE &nearr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative min-h-screen w-full hero-blue-mesh flex items-center justify-center pt-24 pb-16 px-6 sm:px-10 lg:px-16 overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      
+      <!-- Left Column: Bio & Calls to Action -->
+      <div class="lg:col-span-6 flex flex-col justify-center pt-6 lg:pt-0">
+        
+        <span class="text-xs sm:text-[13px] font-mono tracking-[0.25em] text-sky-700 font-semibold uppercase mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+          HI, I'M SPANDANA CHINTHALA
+        </span>
+
+        <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-[60px] text-[#0f172a] tracking-tight leading-[1.08] mb-6">
+          I BUILD DIGITAL<br>
+          EXPERIENCES THAT<br>
+          <span class="text-brand-primary">FEEL ALIVE.</span>
+        </h1>
+
+        <!-- Career Objective -->
+        <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg mb-8">
+          Motivated <strong>AI &amp; ML engineering student</strong> with a keen interest in Artificial Intelligence, Machine Learning, and software development. Eager to solve real-world problems and master emerging technologies.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="https://www.linkedin.com/in/spandana-chintala-354430440" target="_blank" rel="noreferrer" class="pill-button px-6 py-3 rounded-full flex items-center gap-3 text-xs sm:text-[13px] font-mono font-bold tracking-wider uppercase text-[#0f172a] group">
+            <span>LINKEDIN CONNECT</span>
+            <span class="w-7 h-7 rounded-full bg-brand-primary text-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
+              <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </span>
+          </a>
+
+          <a href="https://github.com/spandanachintala213-maker" target="_blank" rel="noreferrer" class="pill-button px-6 py-3 rounded-full flex items-center gap-2.5 text-xs sm:text-[13px] font-mono font-bold tracking-wider uppercase text-slate-700 hover:text-brand-primary">
+            <i class="fa-brands fa-github text-base"></i>
+            <span>GITHUB</span>
+          </a>
+
+          <a href="#projects" class="pill-button px-6 py-3 rounded-full text-xs sm:text-[13px] font-mono font-bold tracking-wider uppercase text-slate-600 hover:text-brand-primary">
+            VIEW WORK
+          </a>
+        </div>
+
+        <!-- Direct Quick Contacts -->
+        <div class="mt-8 flex flex-wrap items-center gap-3 text-xs font-mono text-slate-600">
+          <a href="mailto:spandanachintala213@gmail.com" class="px-3.5 py-1.5 rounded-full bg-white border border-sky-100 hover:border-brand-primary transition-colors flex items-center gap-2 shadow-sm">
+            <i class="fa-regular fa-envelope text-brand-primary"></i>
+            <span>spandanachintala213@gmail.com</span>
+          </a>
+          <a href="tel:9014920111" class="px-3.5 py-1.5 rounded-full bg-white border border-sky-100 hover:border-brand-primary transition-colors flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-phone text-brand-primary"></i>
+            <span>+91 9014920111</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Permanent Portrait Image Setup (Direct Live Web Link) -->
+      <div class="lg:col-span-6 relative flex justify-center items-end mt-8 lg:mt-0 min-h-[520px] sm:min-h-[580px]">
+        
+        <div class="relative w-full max-w-[490px] sm:max-w-[540px] flex items-end justify-center">
+          
+          <!-- Soft Light Blue Editorial Arch -->
+          <div class="absolute bottom-4 right-2 sm:right-6 w-[340px] sm:w-[410px] h-[450px] sm:h-[530px] rounded-t-full bg-gradient-to-b from-sky-200/70 via-sky-100/50 to-[#f8fafc]/10 pointer-events-none -z-10 shadow-inner"></div>
+          
+          <!-- Soft Ambient Light Blue Aura -->
+          <div class="absolute top-10 right-4 w-72 h-72 rounded-full bg-sky-400/15 blur-3xl pointer-events-none -z-10"></div>
+
+          <!-- Main Portrait Container (Direct Live Image, Non-draggable) -->
+          <div class="relative w-full flex items-end justify-center z-10 select-none">
+            
+            <img 
+              id="spandana-portrait"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEglzW2Gel_QIWxkz-wLWZ99_sMiBCfJj_RqEucb0xpvDMXAcIts9d5TZRES5Ce_nXjBzq02es9KEo9v-yuFERLe2B3fjvq8qx0Tn9ZFdFOA7lxVrydexRqQETQt_YVksmq4NWrzjon9qcFUJwws7skdWumPwn-fALj-yxj5z6qOvRCuXMs_6k-60kJUwuw" 
+              alt="Chinthala Spandana" 
+              draggable="false"
+              class="no-drag w-full max-h-[560px] sm:max-h-[620px] object-contain object-bottom filter contrast-[1.02] drop-shadow-xl"
+            />
+
+            <!-- Laptop Desk Perspective Overlay (Light Navy Theme) -->
+            <div class="absolute -bottom-3 -left-8 sm:-left-14 w-56 sm:w-64 h-36 bg-[#0f172a] rounded-tr-3xl transform -rotate-6 border-t-2 border-r-2 border-sky-400/30 shadow-2xl opacity-95 pointer-events-none z-20 flex flex-col justify-between p-3 overflow-hidden">
+              <div class="w-full h-full bg-[#0b1120] rounded-tr-2xl border border-sky-900/60 p-2.5 flex flex-col justify-between">
+                <div class="flex items-center gap-1.5 opacity-60">
+                  <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                  <span class="text-[9px] font-mono text-sky-300 ml-2">spandana_ai.py</span>
+                </div>
+                <div class="space-y-1 font-mono text-[8px] text-sky-300/80">
+                  <p>&lt;<span class="text-white">Engineer</span> name=<span class="text-cyan-400">"Spandana"</span> /&gt;</p>
+                  <p class="text-slate-400">// AVN Institute &bull; AI &amp; ML</p>
+                  <p class="text-brand-primary">model.train(dataset)</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Handwritten Signature: Spandana ♡ (Blue Accent) -->
+          <div class="absolute right-0 sm:-right-4 top-1/3 transform rotate-[-7deg] z-30 pointer-events-none select-none">
+            <div class="flex flex-col items-center">
+              <span class="font-signature text-5xl sm:text-7xl text-[#0f172a] tracking-tight drop-shadow-sm flex items-center gap-2">
+                Spandana <span class="text-3xl sm:text-4xl text-brand-primary">♡</span>
+              </span>
+              <svg class="w-36 sm:w-48 -mt-2 -ml-3" viewBox="0 0 160 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 16 Q 80 26 155 7" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full pill-button text-[11px] font-mono tracking-widest text-slate-600 uppercase flex items-center gap-2 hover:text-brand-primary transition-colors z-20">
+      <span>Scroll Down</span>
+      <i class="fa-solid fa-chevron-down text-[9px] animate-bounce text-brand-primary"></i>
+    </a>
+  </section>
+
+  <!-- ================= ABOUT & STRENGTHS SECTION ================= -->
+  <section id="about" class="py-24 px-6 sm:px-12 bg-white relative border-t border-sky-100">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-5 reveal">
+        <span class="text-xs font-mono tracking-[0.25em] text-brand-primary uppercase font-bold">ABOUT ME</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-[#0f172a] mt-2 leading-tight">
+          Passionate about AI.<br>
+          Driven by Innovation.
+        </h2>
+        <div class="w-12 h-1 bg-brand-primary rounded-full mt-4 mb-6"></div>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+          Hello! I'm <strong>Chinthala Spandana</strong>, an enthusiastic Artificial Intelligence &amp; Machine Learning engineering student with a deep passion for intelligent software architectures and modern web apps.
+        </p>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+          I am eager to develop my technical skills, work on real-world projects, and continuously learn emerging technologies to create impactful digital systems.
+        </p>
+
+        <!-- Languages & Location -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <div class="px-3.5 py-1.5 rounded-full bg-brand-softBlue/60 border border-sky-200 text-xs font-mono text-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-language text-brand-primary"></i>
+            <span>Languages: <strong>Telugu &bull; English</strong></span>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-full bg-brand-softBlue/60 border border-sky-200 text-xs font-mono text-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-brand-primary"></i>
+            <span>Hyderabad, Telangana</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strengths Grid (With Staggered Scroll Animations) -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 hover:border-brand-primary/50 transition-all shadow-sm hover:shadow-md reveal delay-100">
+          <div class="w-10 h-10 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-lg mb-3">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="text-base font-display font-bold text-[#0f172a]">Problem Solving</div>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Analyzing technical requirements with structured algorithmic logic and clean solutions.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 hover:border-brand-primary/50 transition-all shadow-sm hover:shadow-md reveal delay-200">
+          <div class="w-10 h-10 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-lg mb-3">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="text-base font-display font-bold text-[#0f172a]">Quick Learning</div>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Rapidly adapting to cutting-edge AI tools, frameworks, and modern development standards.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 hover:border-brand-primary/50 transition-all shadow-sm hover:shadow-md reveal delay-100">
+          <div class="w-10 h-10 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-lg mb-3">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <div class="text-base font-display font-bold text-[#0f172a]">Teamwork &amp; Collaboration</div>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Contributing effectively in cross-functional engineering teams to build scalable software.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 hover:border-brand-primary/50 transition-all shadow-sm hover:shadow-md reveal delay-200">
+          <div class="w-10 h-10 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-lg mb-3">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <div class="text-base font-display font-bold text-[#0f172a]">Communication</div>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Expressing engineering ideas, project updates, and documentation with clarity and confidence.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION SECTION ================= -->
+  <section id="education" class="py-24 px-6 sm:px-12 bg-[#f8fafc] relative border-t border-sky-100">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-mono tracking-[0.25em] text-brand-primary uppercase font-bold">ACADEMIC JOURNEY</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-black text-[#0f172a] mt-2">
+          Education Background
+        </h2>
+        <p class="text-sm text-slate-500 mt-3">Formal institutions where I built my analytical and engineering foundations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- B.Tech Card -->
+        <div class="p-8 rounded-3xl bg-white border-2 border-brand-primary/30 shadow-sm relative overflow-hidden flex flex-col justify-between reveal delay-100 hover:-translate-y-1.5 transition-transform duration-300">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-brand-softBlue/60 rounded-bl-full -z-0"></div>
+          <div class="relative z-10">
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-brand-primary text-white uppercase tracking-wider">
+              Graduation
+            </span>
+            <h3 class="text-xl font-display font-bold text-[#0f172a] mt-4 mb-1">
+              AVN Institute of Engineering and Technology
+            </h3>
+            <p class="text-brand-primary font-mono text-xs font-semibold">
+              B.Tech — Artificial Intelligence &amp; Machine Learning
+            </p>
+            <p class="text-xs text-slate-500 leading-relaxed mt-4">
+              Focusing on artificial intelligence, neural networks, machine learning algorithms, and software development.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-sky-100 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span><i class="fa-solid fa-graduation-cap text-brand-primary mr-1.5"></i> Engineering</span>
+            <span class="text-[#0f172a] font-semibold">AI &amp; ML</span>
+          </div>
+        </div>
+
+        <!-- Intermediate Card -->
+        <div class="p-8 rounded-3xl bg-white border border-sky-100 shadow-sm relative overflow-hidden flex flex-col justify-between reveal delay-200 hover:-translate-y-1.5 transition-transform duration-300">
+          <div>
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-700 uppercase tracking-wider">
+              Higher Secondary
+            </span>
+            <h3 class="text-xl font-display font-bold text-[#0f172a] mt-4 mb-1">
+              Sahithi Junior College for Girls
+            </h3>
+            <p class="text-slate-500 font-mono text-xs font-semibold">
+              Intermediate Education
+            </p>
+            <p class="text-xs text-slate-500 leading-relaxed mt-4">
+              Built strong analytical logic, mathematics, and science foundation.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-sky-100 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span><i class="fa-solid fa-book-open text-brand-primary mr-1.5"></i> College</span>
+            <span class="text-[#0f172a] font-semibold">Intermediate</span>
+          </div>
+        </div>
+
+        <!-- Secondary Card -->
+        <div class="p-8 rounded-3xl bg-white border border-sky-100 shadow-sm relative overflow-hidden flex flex-col justify-between reveal delay-300 hover:-translate-y-1.5 transition-transform duration-300">
+          <div>
+            <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-700 uppercase tracking-wider">
+              Schooling
+            </span>
+            <h3 class="text-xl font-display font-bold text-[#0f172a] mt-4 mb-1">
+              Aryabatha High School
+            </h3>
+            <p class="text-slate-500 font-mono text-xs font-semibold">
+              Secondary Education (SSC)
+            </p>
+            <p class="text-xs text-slate-500 leading-relaxed mt-4">
+              Established foundational academic excellence, discipline, and competitive spirit.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-sky-100 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span><i class="fa-solid fa-school text-brand-primary mr-1.5"></i> School</span>
+            <span class="text-[#0f172a] font-semibold">SSC</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TECHNICAL SKILLS SECTION ================= -->
+  <section id="skills" class="py-24 px-6 sm:px-12 bg-white relative border-t border-sky-100">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-mono tracking-[0.25em] text-brand-primary uppercase font-bold">TECHNICAL SKILLS</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-black text-[#0f172a] mt-2">
+          Skills &amp; Technologies
+        </h2>
+        <p class="text-sm text-slate-500 mt-3">Languages, tools, and platforms I work with.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Programming -->
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 shadow-sm hover:border-brand-primary/50 transition-all flex flex-col justify-between reveal delay-100 hover:shadow-md">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-xl mb-4">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="text-lg font-display font-bold text-[#0f172a] mb-2">Programming</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">Core languages used for algorithms, machine learning models, and system logic.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">C</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">Python</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">Java</span>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 shadow-sm hover:border-brand-primary/50 transition-all flex flex-col justify-between reveal delay-200 hover:shadow-md">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-xl mb-4">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3 class="text-lg font-display font-bold text-[#0f172a] mb-2">Web Technologies</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">Building responsive, accessible, and fast client-side web interfaces.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">HTML</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">CSS</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 shadow-sm hover:border-brand-primary/50 transition-all flex flex-col justify-between reveal delay-300 hover:shadow-md">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-xl mb-4">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3 class="text-lg font-display font-bold text-[#0f172a] mb-2">Databases</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">Designing relational databases, writing queries, and handling data storage.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">SQL</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">Queries</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">Relational DB</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="p-6 rounded-3xl bg-[#f8fafc] border border-sky-100 shadow-sm hover:border-brand-primary/50 transition-all flex flex-col justify-between reveal delay-100 hover:shadow-md">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-brand-softBlue flex items-center justify-center text-brand-primary text-xl mb-4">
+              <i class="fa-solid fa-toolbox"></i>
+            </div>
+            <h3 class="text-lg font-display font-bold text-[#0f172a] mb-2">Tools &amp; Versioning</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">Modern developer tools for code management, collaboration, and debugging.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">Git</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">GitHub</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-slate-800 font-semibold">VS Code</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PROJECT SECTION (1 HIGHLIGHTED PORTFOLIO PROJECT) ================= -->
+  <section id="projects" class="py-24 px-6 sm:px-12 bg-[#f8fafc] relative border-t border-sky-100">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <span class="text-xs font-mono tracking-[0.25em] text-brand-primary uppercase font-bold">FEATURED PROJECT</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-black text-[#0f172a] mt-2">
+          Personal Interactive Portfolio
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm font-mono mt-3">
+          A bespoke, ultra-fast web portfolio engineered with semantic HTML5, modern Tailwind CSS, and interactive JavaScript.
+        </p>
+      </div>
+
+      <!-- Single Highlighted Portfolio Card -->
+      <div class="group rounded-3xl overflow-hidden border border-sky-200/80 bg-white hover:border-brand-primary/60 transition-all duration-500 shadow-md hover:shadow-2xl reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          
+          <!-- Image Mockup -->
+          <div class="lg:col-span-7 aspect-[16/10] overflow-hidden relative bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" 
+              alt="Interactive Web Portfolio" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[11px] font-mono font-bold uppercase text-brand-primary shadow-sm flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-brand-primary animate-ping"></span>
+              Live Project
+            </div>
+            <div class="absolute bottom-4 right-4 bg-[#0f172a]/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono font-medium text-white">
+              HTML5 &bull; Tailwind CSS &bull; JavaScript
+            </div>
+          </div>
+
+          <!-- Description Details -->
+          <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between h-full">
+            <div>
+              <span class="text-[11px] font-mono text-brand-primary font-bold uppercase tracking-wider">01 / WEB ENGINEERING &amp; UI</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-[#0f172a] mt-2 group-hover:text-brand-primary transition-colors">
+                Personal Developer Portfolio
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed">
+                Engineered with modern responsive layouts, custom scroll animations, editorial aesthetics, and optimized for 60 FPS fluidity.
+              </p>
+
+              <!-- Highlights Tags -->
+              <div class="flex flex-wrap gap-2 mt-6 text-[11px] font-mono text-slate-700">
+                <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-100">Responsive UI</span>
+                <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-100">Scroll Animations</span>
+                <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-100">Zero Dependencies</span>
+              </div>
+            </div>
+
+            <!-- CTA Actions (Links to your GitHub & LinkedIn) -->
+            <div class="pt-8 mt-8 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <a href="https://github.com/spandanachintala213-maker" target="_blank" rel="noreferrer" class="text-xs font-mono font-bold text-slate-800 hover:text-brand-primary hover:underline flex items-center gap-1.5">
+                  <i class="fa-brands fa-github text-sm"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/spandana-chintala-354430440" target="_blank" rel="noreferrer" class="text-xs font-mono font-bold text-brand-primary hover:underline flex items-center gap-1.5">
+                  <i class="fa-brands fa-linkedin text-sm"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+
+              <button onclick="showNotice('You are viewing this portfolio live!')" class="w-10 h-10 rounded-full bg-brand-softBlue/60 border border-sky-200 hover:bg-brand-primary hover:text-white flex items-center justify-center transition-all shadow-sm" title="View Live">
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / GET IN TOUCH SECTION ================= -->
+  <section id="contact" class="py-28 px-6 sm:px-12 bg-[#0f172a] text-white relative text-center">
+    <div class="max-w-3xl mx-auto reveal">
+      
+      <span class="text-xs font-mono tracking-[0.25em] text-sky-400 uppercase font-bold">GET IN TOUCH</span>
+      <h2 class="text-4xl sm:text-6xl font-display font-black text-white mt-3 mb-6">
+        Let's Build Something<br>
+        <span class="text-sky-400">Unforgettable.</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base font-light mb-10 max-w-lg mx-auto">
+        Looking for an AI/ML engineering internship, software project collaboration, or full-time opportunities? Feel free to connect directly.
+      </p>
+
+      <!-- Direct Contact Details Strip -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        
+        <!-- Copy Email Pill -->
+        <div class="inline-flex items-center gap-3 p-2 rounded-full bg-white/10 border border-white/15 max-w-full">
+          <span class="px-4 text-xs sm:text-sm font-mono text-white/90 select-all" id="contact-email">
+            spandanachintala213@gmail.com
+          </span>
+          <button onclick="copyEmail()" class="px-5 py-2 rounded-full bg-brand-primary hover:bg-white text-white hover:text-[#0f172a] font-mono text-xs font-bold uppercase transition-all duration-300 flex items-center gap-2 shadow-lg">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy</span>
+          </button>
+        </div>
+
+        <!-- Phone Call Pill -->
+        <a href="tel:9014920111" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-mono font-bold tracking-wider text-white uppercase flex items-center gap-2.5 transition-all">
+          <i class="fa-solid fa-phone text-sky-400"></i>
+          <span>+91 9014920111</span>
+        </a>
+
+      </div>
+
+      <!-- Socials Links Strip (GitHub & LinkedIn) -->
+      <div class="flex justify-center items-center gap-8 text-white/70 text-2xl pt-6">
+        <a href="https://github.com/spandanachintala213-maker" target="_blank" rel="noreferrer" class="hover:text-sky-400 transition-all hover:scale-110" title="GitHub Profile">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/spandana-chintala-354430440" target="_blank" rel="noreferrer" class="hover:text-sky-400 transition-all hover:scale-110" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="mailto:spandanachintala213@gmail.com" class="hover:text-sky-400 transition-all hover:scale-110" title="Direct Email">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 bg-[#090d16] border-t border-white/5 text-center text-xs font-mono text-slate-400">
+    <p>&copy; 2026 Chinthala Spandana &bull; AVN Institute of Engineering and Technology</p>
+  </footer>
+
+  <!-- Toast Notification Feedback -->
+  <div id="toast" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-white text-[#0f172a] px-6 py-3.5 rounded-2xl flex items-center gap-3 border border-sky-200 shadow-2xl">
+    <span class="w-2.5 h-2.5 rounded-full bg-brand-primary animate-ping"></span>
+    <p class="text-xs font-mono font-medium" id="toast-message">Notification</p>
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="project3.js"></script>
+</body>
+</html>
